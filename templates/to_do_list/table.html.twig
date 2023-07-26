@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ToDoListController!
+{% endblock %}
+
+{% block body %}
+	<table class="table">
+		<tr>
+			<th class="table-info" scope="col">#</th>
+			<th class="table-success" scope="col">Activity name</th>
+			<th class="table-primary" scope="col">To do at</th>
+			<th class="table-danger" scope="col">Actions</th>
+		</tr>
+		<tbody>
+			{% for i in data %}
+
+				<tr>
+					<th class="table-info" scope="row">{{ i.id }}</th>
+					<td class="table-success">{{ i.name }}</td>
+					<td class="table-primary">{{ i.toDoAt|date }}</td>
+					<td class="table-danger">
+						<a href="{{ path('app_edit',{id:i.id}) }}">Edit</a>
+					</td>
+				</tr>
+			{% endfor %}
+
+
+		</tbody>
+	</table>
+
+{% endblock %}

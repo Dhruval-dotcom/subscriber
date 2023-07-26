@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ToDoListController!
+{% endblock %}
+
+{% block body %}
+	{{ form_start(form, {
+		'method': 'POST' }) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.toDoAt) }}
+
+                <button class="btn btn-primary" type="submit">submit
+                </button>
+	{{ form_end(form) }}
+
+{% endblock %}
